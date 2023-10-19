@@ -3,7 +3,7 @@
 Welcome to the official repository for the Synnovation Lab website.
 
 ## About Synnovation Lab
-The Synnovation Lab is an experimental educational community located at Sycamore High School in Blue Ash, Ohio. This innovative program is dedicated to fostering creativity, critical thinking, and hands-on learning experiences for students.
+The Synnovation Lab is an experimental educational community located at Sycamore High School in Blue Ash, Ohio. This innovative program is dedicated to fostering personal learning, meaningful learning, and a community for students.
 
 ## Purpose
 This repository contains the source code and project files for the Synnovation Lab website. It serves as a central hub for sharing information about the lab's activities, projects, and achievements.
