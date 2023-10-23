@@ -1,11 +1,16 @@
+:root {
+  --backround: #00693e;
+  --secondary: #ffd200;
+  font-family: "Hind Siliguri", sans-serif;
+}
 body {
   margin: 0px;
-  font-family: "Hind Siliguri", sans-serif;
+  background-color: #282a35;
 }
 header {
   text-align: center;
-  border-bottom: 2px solid #000000;
-  color: green;
+
+  color: #00693e;
 }
 nav {
   text-align: right;
@@ -17,17 +22,18 @@ li {
 }
 li a {
   text-decoration: none;
-  color: green;
+  color: var(--backround);
 }
 li a:hover {
-  box-shadow: inset 100px 0 0 0 gold;
+  box-shadow: inset 100px 0 0 0 var(--secondary);
 }
 #logo {
   height: 0px;
   width: 0px;
   transform: scale(0.035);
-  padding-left: 30px;
-  padding-top: 10px;
+  padding-left: 70px;
+  padding-top: 0%;
+  margin-top: 20px;
 }
 .intro {
   text-align: center;
@@ -42,4 +48,14 @@ footer {
 }
 footer a {
   color: blue;
+}
+.wave {
+  text-align: center;
+}
+
+#belowWave {
+  width: auto;
+  height: 100vh;
+  background-color: var(--backround);
+  margin-top: -10px;
 }
