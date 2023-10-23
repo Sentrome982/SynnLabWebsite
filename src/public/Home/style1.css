@@ -9,23 +9,11 @@ body {
 }
 header {
   text-align: center;
-
   color: #00693e;
 }
-nav {
-  text-align: right;
-  padding-right: 10px;
-  border-bottom: 2px solid #000000;
-}
-li {
-  display: inline;
-}
-li a {
-  text-decoration: none;
-  color: var(--backround);
-}
-li a:hover {
-  box-shadow: inset 100px 0 0 0 var(--secondary);
+main
+{
+  color: lightgray;
 }
 #logo {
   height: 0px;
@@ -46,6 +34,21 @@ footer {
   border-top: 2px solid #000000;
   padding: 10px;
 }
+footer nav {
+  text-align: right;
+  padding-right: 10px;
+  border-bottom: 2px solid #000000;
+}
+footer li {
+  display: inline;
+}
+footer li a {
+  text-decoration: none;
+  color: var(--backround);
+}
+footer li a:hover {
+  box-shadow: inset 100px 0 0 0 var(--secondary);
+}
 footer a {
   color: blue;
 }
@@ -55,7 +58,7 @@ footer a {
 
 #belowWave {
   width: auto;
-  height: 100vh;
+  height: 1vh;
   background-color: var(--backround);
   margin-top: -10px;
 }
