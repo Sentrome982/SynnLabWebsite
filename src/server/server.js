@@ -13,7 +13,7 @@ let io = socketio(server);
 app.use(express.static(publicPath));
 
 server.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+  console.log(`Server started on port ${port} without error`);
 });
 
 io.on("connection", (socket) => {
