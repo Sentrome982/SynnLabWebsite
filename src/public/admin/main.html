@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SynnLab Website - Admin Page</title>
+    <link href="../admin/styleAdmin.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 id="title">ADMIN PAGE</h1>
+    <button type="button" onclick="showForm();">make div</button>
+    <div id="events"></div>
+
+    <!-- Immage upload -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" />
+      <input type="submit" />
+    </form>
+
+    <!--TEMPORARY TESTING-->
+    <form action="" id="addEvent" onsubmit="return false">
+      <h1>Event</h1>
+      <input
+        required
+        type="text"
+        id="Event"
+        placeholder="Enter the event title: "
+      />
+      <input
+        required
+        type="text"
+        id="Description"
+        placeholder="Enter the event description: "
+      />
+      <input
+        required
+        type="date"
+        id="Date"
+        placeholder="Enter the date of the event: "
+      />
+      <button type="submit">Submit</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scriptAdmin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+:root {
+  --backround: #00693e;
+  --secondary: #ffd200;
+  font-family: "Hind Siliguri", sans-serif;
+}
+body {
+  margin: 0px;
+  background-color: #282a35;
+}
+header {
+  text-align: center;
+  color: #00693e;
+}
+main {
+  color: lightgray;
+}
+#logo {
+  height: 0px;
+  width: 0px;
+  transform: scale(0.035);
+  padding-left: 70px;
+  padding-top: 0%;
+  margin-top: 20px;
+}
+.intro {
+  text-align: center;
+}
+footer {
+  text-align: center;
+  font-size: 75%;
+  font-style: italic;
+  background-color: #c1c1c1;
+  border-top: 2px solid #000000;
+  padding: 10px;
+}
+footer nav {
+  text-align: right;
+  padding-right: 10px;
+  border-bottom: 2px solid #000000;
+}
+footer li {
+  display: inline;
+}
+footer li a {
+  text-decoration: none;
+  color: var(--backround);
+}
+footer li a:hover {
+  box-shadow: inset 100px 0 0 0 var(--secondary);
+}
+footer a {
+  color: blue;
+}
+
+#title {
+  text-align: center;
+}
+
+#stayDown {
+  height: 10vh;
+}
+
+#events {
+  height: 70vh;
+  width: 50%;
+}
+
+#testDiv {
+  height: 30vh;
+  width: 30vw;
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 20px;
+  outline: #00693e solid 2px;
+  border-radius: 8px;
+}
+
+.test {
+  height: 30vh;
+  width: 30vw;
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 20px;
+  outline: #00693e solid 2px;
+  border-radius: 8px;
+}

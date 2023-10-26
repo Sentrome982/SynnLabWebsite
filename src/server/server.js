@@ -1,9 +1,9 @@
 const express = require("express");
+const multer = require("multer");
 const path = require("path");
 const http = require("http");
 const socketio = require("socket.io");
 const fs = require("fs");
-
 const publicPath = path.join(__dirname, "../public/");
 const port = process.env.PORT || 80;
 let app = express();
@@ -12,10 +12,40 @@ let io = socketio(server);
 
 app.use(express.static(publicPath));
 
+//Image upload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "images");
+  },
+
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+//const upload = multer({ dest: "../public/image/" });
+
+//Image recieve
+app.get("/admin/main.html", (req, res) => {
+  console.log("get");
+  res.sendFile(__dirname + "/public/admin/main.html");
+});
+
+app.post("/upload", upload.single("image"), async (req, res) => {
+  res.send("uploaded");
+});
+
 server.listen(port, () => {
   console.log(`Server started on port ${port} without error`);
 });
 
+const database = "database/events.json";
+
 io.on("connection", (socket) => {
-  console.log("A user connected"); // optional idk
+  console.log("A user connected"); // optional\
+  socket.on("event_created", (eventData) => {
+    console.log(eventData);
+  });
 });
