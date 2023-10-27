@@ -5,7 +5,7 @@ const http = require("http");
 const socketio = require("socket.io");
 const fs = require("fs");
 const publicPath = path.join(__dirname, "../public/");
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 let app = express();
 let server = http.createServer(app);
 let io = socketio(server);
@@ -38,7 +38,7 @@ app.post("/upload", upload.single("image"), async (req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`Server started on port ${port} without error`);
+  console.log(`Server started on port ${port}`);
 });
 
 const database = "database/events.json";
