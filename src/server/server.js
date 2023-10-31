@@ -15,7 +15,7 @@ app.use(express.static(publicPath));
 //Image upload
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "images");
+    cb(null, "src/public/images");
   },
 
   filename: (req, file, cb) => {
@@ -28,7 +28,7 @@ const upload = multer({ storage: storage });
 //const upload = multer({ dest: "../public/image/" });
 
 //Image recieve
-app.get("/admin/main.html", (req, res) => {
+app.get("/upload", (req, res) => {
   console.log("get");
   res.sendFile(__dirname + "/public/admin/main.html");
 });

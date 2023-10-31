@@ -1,15 +1,19 @@
 :root {
-  --backround: #00693e;
-  --secondary: #ffd200;
+  --black: #282a35ff;
+  --green: #00693eff;
+  --gold: #ffd200ff;
+  --gray: #a9b2acff;
+  --teal: #489fb5ff;
+
   font-family: "Hind Siliguri", sans-serif;
 }
 body {
   margin: 0px;
-  background-color: #282a35;
+  background-color: var(--black);
 }
 header {
   text-align: center;
-  color: #00693e;
+  color: var(--green);
 }
 main {
   color: lightgray;
@@ -29,27 +33,30 @@ footer {
   text-align: center;
   font-size: 75%;
   font-style: italic;
-  background-color: #c1c1c1;
-  border-top: 2px solid #000000;
-  padding: 10px;
+  background-color: var(--black);
+  border-top: 2px solid var(--gold);
+  color: var(--gray);
 }
 footer nav {
   text-align: right;
   padding-right: 10px;
-  border-bottom: 2px solid #000000;
+  /*border-bottom: 2px solid var(--gold);*/
 }
 footer li {
   display: inline;
 }
 footer li a {
   text-decoration: none;
-  color: var(--backround);
+  color: var(--gray);
 }
 footer li a:hover {
-  box-shadow: inset 100px 0 0 0 var(--secondary);
+  color: var(--teal);
 }
 footer a {
-  color: blue;
+  color: var(--teal);
+}
+footer a:hover {
+  color: #377988;
 }
 .wave {
   text-align: center;
@@ -58,6 +65,6 @@ footer a {
 #belowWave {
   width: auto;
   height: 10vh;
-  background-color: var(--backround);
+  background-color: var(--green);
   margin-top: -10px;
 }
