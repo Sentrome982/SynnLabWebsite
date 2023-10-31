@@ -16,11 +16,9 @@
     <button type="button" onclick="showForm();">make div</button>
     <div id="events"></div>
 
-    <!-- Immage upload -->
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="image" />
-      <input type="submit" />
-    </form>
+    <!-- Image upload -->
+    <input type="file" class="fileUpload" />
+    <button class="fileUploadSubmit">Upload File</button>
 
     <!--TEMPORARY TESTING-->
     <form action="" id="addEvent" onsubmit="return false">
