@@ -14,11 +14,11 @@ createEventForm.addEventListener("submit", (e) => {
   let eventData = {
     title: title,
     description: description,
-    date: date
-  }
+    date: date,
+  };
 
   add_event(eventData.title, eventData.description, eventData.date);
-  
+
   socket.emit("event_created", eventData);
 });
 
@@ -45,3 +45,25 @@ function create_element(parent, type, value, HTMLClass) {
 
   return element;
 }
+
+// image upload stuffs
+const fileUpload = document.querySelector(".fileUpload");
+const fileUploadSubmit = document.querySelector(".fileUploadSubmit");
+
+fileUploadSubmit.onclick = () => {
+  let file = fileUpload.files[0];
+  if (file === undefined) {
+    console.log("No File Uploaded");
+    return;
+  }
+  let fileName = file.name;
+
+  let data = {
+    fileName: fileName,
+    fileData: file,
+  };
+
+  console.log(data);
+
+  socket.emit("file-upload", data);
+};

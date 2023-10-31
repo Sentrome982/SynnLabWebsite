@@ -1,0 +1,75 @@
+:root {
+  --black: #282a35ff;
+  --green: #00693eff;
+  --gold: #ffd200ff;
+  --gray: #a9b2acff;
+  --teal: #489fb5ff;
+
+  font-family: "Hind Siliguri", sans-serif;
+}
+body {
+  margin: 0px;
+  background-color: var(--black);
+}
+header {
+  text-align: center;
+  color: var(--green);
+}
+main {
+  color: lightgray;
+}
+#logo {
+  height: 0px;
+  width: 0px;
+  transform: scale(0.035);
+  padding-left: 70px;
+  padding-top: 0%;
+  margin-top: 20px;
+}
+.intro {
+  text-align: center;
+}
+footer {
+  text-align: center;
+  font-size: 75%;
+  font-style: italic;
+  background-color: var(--black);
+  border-top: 2px solid var(--gold);
+  color: var(--gray);
+}
+footer nav {
+  text-align: right;
+  padding-right: 10px;
+  /*border-bottom: 2px solid var(--gold);*/
+}
+footer li {
+  display: inline;
+}
+footer li a {
+  text-decoration: none;
+  color: var(--gray);
+}
+footer li a:hover {
+  color: var(--teal);
+}
+footer a {
+  color: var(--teal);
+}
+footer a:hover {
+  color: #377988;
+}
+.wave {
+  text-align: center;
+}
+
+#belowWave {
+  width: auto;
+  height: 200vh;
+  background-color: var(--green);
+  margin-top: -10px;
+}
+
+#weeklyrecap {
+  width: 400px;
+  height: 1000px;
+}
