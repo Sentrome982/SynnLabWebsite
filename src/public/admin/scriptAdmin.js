@@ -17,33 +17,59 @@ createEventForm.addEventListener("submit", (e) => {
     date: date,
   };
 
-  add_event(eventData.title, eventData.description, eventData.date);
-
   socket.emit("event_created", eventData);
+
+  setTimeout(() => {
+    window.location.reload();
+  }, 500);
 });
 
-function add_event(title, description, date) {
-  let eventDiv = document.createElement("div");
-  eventDiv.setAttribute("class", "event_div");
-  eventParent.appendChild(eventDiv);
+socket.emit("get_events");
 
-  let eventTitle = create_element(eventDiv, "p", title, "event_title");
-  let eventDescription = create_element(
-    eventDiv,
-    "p",
-    description,
-    "event_description"
-  );
-  let eventDate = create_element(eventDiv, "p", date, "event_date");
+function create_element(parent, type, value = null, html_class = null, html_id = null) {
+    let new_element = document.createElement(type);
+    
+    if (html_class != null) {
+        new_element.setAttribute("class", html_class);
+    }
+
+    if (html_id != null) {
+        new_element.setAttribute("id", html_id);
+    }
+
+    if (value != null) {
+        new_element.textContent = value;
+    }
+
+    parent.appendChild(new_element);
 }
+socket.on("send_events", (events) => {
+    let event_parent = document.body;
+    for (let i = 0; i < events.events.length; i++) {
+        let generated_event = events.events[i];
 
-function create_element(parent, type, value, HTMLClass) {
-  let element = document.createElement(type);
-  element.textContent = value;
-  element.setAttribute("class", HTMLClass);
-  parent.appendChild(element);
+        let event_div = document.createElement("div");
+        event_parent.appendChild(event_div);
 
-  return element;
+        create_element(event_div, "p", generated_event.title, "event_title");
+        create_element(event_div, "p", generated_event.description, "event_description");
+        create_element(event_div, "p", generated_event.date, "event_date");
+
+        let delete_button = document.createElement("button");
+        delete_button.setAttribute("class", "event_delete");
+        delete_button.innerHTML = '<i class="fa-solid fa-x"></i>';
+        delete_button.setAttribute("onclick", "delete_event(" + i + ");")
+        event_div.appendChild(delete_button);
+    }
+})
+
+function delete_event(id) {
+    console.log(id)
+    socket.emit("delete_event", id);
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
 }
 
 // image upload stuffs

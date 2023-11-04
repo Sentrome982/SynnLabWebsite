@@ -15,13 +15,27 @@ server.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
 
-const database = "database/events.json";
+// gets events
+db = "src/server/database/events.json";
+let current_events = JSON.parse(fs.readFileSync(db));
 
 io.on("connection", (socket) => {
-  console.log("A user connected"); // optional\
+  socket.on("get_events", () => {
+    socket.emit("send_events", current_events);
+  })
+
   socket.on("event_created", (eventData) => {
-    console.log(eventData);
+    // writes events
+    eventData.id = current_events.events.length;
+    current_events.events.push(eventData);
+    fs.writeFileSync(db, JSON.stringify(current_events, null, 2));
   });
+
+  socket.on("delete_event", (id) => {
+    current_events.events.pop(id);
+    fs.writeFileSync(db, JSON.stringify(current_events, null, 2));
+  })
+
   socket.on("file-upload", (data) => {
     console.log(data);
     fs.writeFileSync(
