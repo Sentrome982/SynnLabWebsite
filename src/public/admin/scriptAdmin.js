@@ -63,6 +63,7 @@ socket.on("send_events", (events) => {
     }
 })
 
+
 function delete_event(id) {
     console.log(id)
     socket.emit("delete_event", id);
