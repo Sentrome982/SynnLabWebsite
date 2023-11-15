@@ -30,7 +30,7 @@ If you want to run a local copy of the Synnovation Lab website for development o
 3. Start a development server or open the HTML files in your browser.
 
 ## Contact
-For questions or more information about Synnovation Lab, feel free to contact us at (Pending Email).
+For questions or more information about Synnovation Lab, feel free to contact us at [253125@sycamoreschools.org](mailto:253125@sycamoreschools.org).
 
 We appreciate your interest in the Synnovation Lab website, and we hope it provides valuable insights into our educational community's activities and achievements.
 
